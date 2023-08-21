@@ -1,0 +1,29 @@
+createBoard(16);
+
+function createBoard(size) {
+  const board = document.querySelector(".board");
+
+  board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+
+  let numDivs = size * size;
+
+  for (let i = 0; i < numDivs; i++) {
+    let div = document.createElement("div");
+    div.classList.add("board-div");
+    board.appendChild(div);
+  }
+}
+
+function getSize() {
+  let feedback = document.querySelector(".feedback");
+
+  let size = prompt("Pick a number between 1-100");
+
+  if (size == null || size > 100 || size < 1) {
+    feedback.innerHTML = "Invalid Number";
+  } else {
+    feedback.innerHTML = "Valid Number";
+    createBoard(size);
+  }
+}
