@@ -13,6 +13,7 @@ function createBoard(size) {
     div.addEventListener("mouseover", function () {
       div.style.backgroundColor = "black";
     });
+    div.classList.add("board-div");
     board.appendChild(div);
   }
 }
@@ -26,5 +27,13 @@ function getSize() {
   } else {
     feedback.innerHTML = "Valid Number";
     createBoard(size);
+  }
+}
+
+function reset() {
+  let boardDivs = document.getElementsByClassName("board-div");
+
+  for (let i = 0; i < boardDivs.length; i++) {
+    boardDivs[i].style.backgroundColor = "white";
   }
 }
