@@ -10,17 +10,18 @@ function createBoard(size) {
 
   for (let i = 0; i < numDivs; i++) {
     let div = document.createElement("div");
-    div.classList.add("board-div");
+    div.addEventListener("mouseover", function () {
+      div.style.backgroundColor = "black";
+    });
     board.appendChild(div);
   }
 }
 
 function getSize() {
   let feedback = document.querySelector(".feedback");
-
   let size = prompt("Pick a number between 1-100");
 
-  if (size == null || size > 100 || size < 1) {
+  if (size == "" || size > 100 || size < 1) {
     feedback.innerHTML = "Invalid Number";
   } else {
     feedback.innerHTML = "Valid Number";

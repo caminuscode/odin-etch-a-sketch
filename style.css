@@ -16,9 +16,8 @@ body {
 
 .footer {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 500px;
   margin-top: 20px;
 }
